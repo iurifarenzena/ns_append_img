@@ -8,7 +8,7 @@ For example, a valid URL would be: `https://1234567.app.netsuite.com/app/crm/sup
 
 ## Usage
 
-Let's say you have to replay your customer on a NetSuite support case and you want to include an image to make your point clear.
+Let's say you have to reply your customer on a NetSuite support case and you want to include an image to make your point clear.
 
 By using **Append Image For NetSuite Case** extension you can easily do that. You'll just need an URL for the image an the extension will do the rest.
 
