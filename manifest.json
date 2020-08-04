@@ -1,7 +1,7 @@
 {
   "name": "Append Image For NetSuite Case",
   "description": "Appends image tag for given URL(s) into a NetSuite support case response field",
-  "version": "0.5",
+  "version": "0.6",
   "permissions": [    
     "*://*.app.netsuite.com/app/crm/support/supportcase*T"
   ],
