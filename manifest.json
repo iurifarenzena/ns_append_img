@@ -1,9 +1,9 @@
 {
   "name": "Append Image For NetSuite Case",
   "description": "Appends image tag for given URL(s) into a NetSuite support case response field",
-  "version": "0.6",
+  "version": "0.7",
   "permissions": [    
-    "*://*.app.netsuite.com/app/crm/support/supportcase*T"
+    "*://*.app.netsuite.com/app/crm/support/supportcase*e=T*"
   ],
   "background": {
     "scripts": ["background.js"],
@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.app.netsuite.com/app/crm/support/supportcase*T"
+        "*://*.app.netsuite.com/app/crm/support/supportcase*e=T*"
       ],
       "js": [
         "contentscript.js"
