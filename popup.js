@@ -5,18 +5,30 @@ function embedImage(e) {
   if (urlFieldInput) {
     urlFieldInput.split(/,|;/).forEach(imgUrl => {
       chrome.tabs.executeScript(null, {
-        code: getScriptCode(getImgTag(imgUrl))
+        code: getappendImageScriptCode(getImgTag(imgUrl.trim()))
       });
+    });
+
+    chrome.tabs.executeScript(null, {
+      code: getsetFocusScriptCode()
     });
   }
   window.close();
 
-  function getScriptCode(imgTag) {
+  function getappendImageScriptCode(imgTag) {
     return "location.href=\"javascript:appendImageTag('" + imgTag + "'); void 0\";";
   }
 
+  function getsetFocusScriptCode() {
+    return "location.href=\"javascript:setEditorFocus(); void 0\";";
+  }
+
   function getImgTag(imgUrl) {
-    return '<br><img src=\\\"' + imgUrl.trim() + '\\\" alt=\\\"' + imgUrl.trim() + '\\\"/>';
+    return '<br><img src=' + escapeUrl(imgUrl) + '/><br><font size=\\\"1\\\">[se a imagem acima n&atilde;o carregar, clique no link:&nbsp;<a href=' + escapeUrl(imgUrl) + '>' + imgUrl + '</a>]</font>';
+  }
+
+  function escapeUrl(imgUrl) {
+    return '\\\"' + imgUrl.trim() + '\\\"';
   }
 }
 
